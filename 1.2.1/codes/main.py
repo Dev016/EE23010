@@ -61,7 +61,13 @@ plt.plot(x_CA[0,:],x_CA[1,:],label='$CA$')
 
 
 #Labeling the coordinates
-tri_coords = np.vstack((A,B,C,D,E,F)).T
+A = A.reshape(-1,1)
+B = B.reshape(-1,1)
+C = C.reshape(-1,1)
+D = D.reshape(-1,1)
+E = E.reshape(-1,1)
+F = F.reshape(-1,1)
+tri_coords = np.block([[A,B,C,D,E,F]])
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
 vert_labels = ['A','B','C','D','E','F']
 for i, txt in enumerate(vert_labels):
