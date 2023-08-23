@@ -556,7 +556,7 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 
-plt.savefig('./figs/1.1.png')
+plt.savefig('/random_vector/figs/1.1.png')
 plt.clf()
 
 
@@ -589,7 +589,7 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 plt.title('Triangle with Centroid')
-plt.savefig('./figs/1.2.png')
+plt.savefig('/random_vector/figs/1.2.png')
 plt.clf()
 
 #Figure 1.3
@@ -635,7 +635,7 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 plt.title('Triangle with Altitudes')
-plt.savefig('./figs/1.3.png')
+plt.savefig('/random_vector/figs/1.3.png')
 plt.clf()
 
 #Figure 1.4
@@ -672,7 +672,7 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 plt.title('Triangle with incircle')
-plt.savefig('./figs/1.5.png')
+plt.savefig('/random_vector/figs/1.5.png')
 plt.clf()
 
 #Figure 1.5
@@ -714,6 +714,6 @@ plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
 plt.title('Triangle with circumcircle')
-plt.savefig('./figs/1.4.png')
+plt.savefig('/random_vector/figs/1.4.png')
 
 
