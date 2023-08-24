@@ -147,7 +147,7 @@
 
 \ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{100pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{200pt*\gnumericScale}@{}}x\end{tabular}}
 
 %\begin{longtable}[c]{%
 \begin{tabular}[c]{%
@@ -170,18 +170,16 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{1 & -8}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Perpendicular bisector of AB}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of perpendicular bisector of $AB$}}
+	
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{10}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{9.5}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of perpendicular bisector of $AB$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -189,18 +187,16 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{4 & 4}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Perpendicular bisector of BC}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of perpendicular bisector of $BC$}}
+	
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{11}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{0}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of perpendicular bisector of $BC$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -208,18 +204,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-5& -4}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Perpendicular bisector of CA}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of perpendicular bisector of $CA$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{12}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{-9.5}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of perpendicular bisector of $CA$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -227,18 +220,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{1.06 \\ -1.06}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Circumcircle}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Circumcentre}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{radius}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Radius}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{4.06}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Circumradius}}
 \\
 \hhline{|-|-|-|}
 %\end{longtable}

@@ -147,7 +147,7 @@
 
 \ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{100pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{150pt*\gnumericScale}@{}}x\end{tabular}}
 
 %\begin{longtable}[c]{%
 \begin{tabular}[c]{%
@@ -170,18 +170,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{1.62& 0.9}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Angular bisector of A}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of Angular bisector of $A$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{13}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{-1.29}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of Angular bisector of $A$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -189,18 +186,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-1.7& 0.58}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Angular bisector of B}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of Angular bisector of $B$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{14}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{0.05}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of Angular bisector of $B$}}
 \\	
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -208,18 +202,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{0.08& -1.49}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{10pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Angular bisector of C}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of Angular bisector of $C$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_{15}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{1.24}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Coefficient of Angular bisector of $B$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -227,18 +218,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-0.32\\ -0.85}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Incircle}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Incentre}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{radius}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{1.79}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Inradius}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -246,7 +234,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-1.59\\ 0.41}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on BC}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on $BC$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -254,7 +242,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{1.45\\ -0.63}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on AB}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on $AB$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -262,7 +250,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-1.44\\ -2.25}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on CA}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Point of Contact on $CA$}}
 \\
 \hhline{|-|-|-|}
 %\end{longtable}

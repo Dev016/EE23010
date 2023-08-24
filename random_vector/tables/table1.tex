@@ -147,7 +147,7 @@
 
 \ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{100pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{125pt*\gnumericScale}@{}}x\end{tabular}}
 
 %\begin{longtable}[c]{%
 \begin{tabular}[c]{%
@@ -171,7 +171,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-1\\ 8}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{AB}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Direction vector of $AB$: $(\vec{B}-\vec{A})$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -179,7 +179,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-4\\ -4}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{BC}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Direction Vector of $BC$: $(\vec{C}-\vec{B})$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -187,35 +187,35 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{5\\ -4}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{AC}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Direction vector of $CA$: $(\vec{A}-\vec{C})$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{B-A}$}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{\vec{B}-\vec{A}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{8.06}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of AB}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Length of $AB$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{C-B}$}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{\vec{C}-\vec{B}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{5.66}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of BC}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Length of $BC$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{A-C}$}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{$\norm{\vec{A}-\vec{C}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{6.40}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{Length of AC}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Length of $AC$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{rank}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{rank $\myvec{1 & 1 & 1 \\ \vec{A}& \vec{B} &\vec{C}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{3}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
@@ -227,18 +227,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{8 & 1}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox{AB}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of line $AB$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_1$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{11}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Constant of line $AB$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -246,18 +243,15 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-4& 4}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox{BC}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of line $BC$}}
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$c_2$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{8}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Constant of line $BC$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -265,18 +259,16 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{$\myvec{-4& -5}$}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}\gnumbox{AC}}}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Normal Vector of line $CA$}}
+	
 \\
-\hhline{|--|~}
+\hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$c_3$}}
+	{\gnumricPB{\raggedright}\gnumbox[l]{$c_3$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{17}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Constant of line $CA$}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -284,7 +276,7 @@
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\raggedright}\gnumbox[l]{18}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{area of triangle}}
+	{\gnumericPB{\raggedright}\gnumbox[l]{Area of triangle}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -295,7 +287,7 @@
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{Angle}}}}
+	 \gnumericPB{\centering}\gnumbox{Angles of Triangle}}}}
 \\
 \hhline{|--|~}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
