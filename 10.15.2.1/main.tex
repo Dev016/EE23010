@@ -1,7 +1,7 @@
 
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
        \def\inputGnumericTable{}                                 %%
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -169,7 +169,7 @@
 % make the title area
 \maketitle
 
-\newpage
+
 
 %\tableofcontents
 
@@ -211,7 +211,7 @@ Question:
 Two customers Shyam and Ekta are visiting a particular shop in the same week(Tuesday to Saturday). Each is equally likely to visit the shop on any day as on another day. What is the probability that both will visit the shop on (i) the same day? (ii) consecutive days? (iii) different days?
 \\
 \solution
-Let X and Y be the random variables that denote the day on which Shyam and Ekta visit the shop respectively.
+Let $X$ and $Y$ be the random variables that denote the day on which Shyam and Ekta visit the shop respectively.
 \begin{align}
 X,Y = 
 	\begin{cases}
@@ -222,20 +222,56 @@ X,Y =
 		4, & \text{Saturday}
 	\end{cases}
 \end{align}
+The pmf of $X$ is:
+\begin{align}
+	p_x\brak{k} =
+	\begin{cases}
+		0, & k < 0\\
+		\frac{1}{5}, & 0 \leq k \leq 4\\
+		0 & k > 4
+	\end{cases}
+\end{align}
+Let $Z$ be a random variable such that,
+\begin{align}
+	Z &= X - Y\\
+	p_z\brak{k} &= P\brak{k = Z} \\
+	&= P\brak{X-Y = k}\\
+	&= P\brak{X = k + Y}\\
+	&= E\sbrak{p_x\brak{k + Y}}\\
+	&= \sum_{m = 0}^{4} p_x\brak{k + m} p_y\brak{m}\\
+	&= \myvec{\frac{1}{5} & 0 & 0 & 0 & 0 \vspace{2pt} \\
+		  \frac{1}{5} & \frac{1}{5} & 0 & 0 & 0 \vspace{2pt}\\
+		  \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & 0 & 0 \vspace{2pt}\\
+		  \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & 0 \vspace{2pt}\\
+		  \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \vspace{2pt}\\
+		  0 & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \vspace{2pt}\\
+		  0 & 0 & \frac{1}{5} & \frac{1}{5} & \frac{1}{5}\vspace{2pt}\\
+		  0 & 0 & 0 & \frac{1}{5} & \frac{1}{5} \vspace{2pt}\\
+		  0 & 0 & 0 & 0 & \frac{1}{5}}
+	  \myvec{\frac{1}{5} \vspace{2pt} \\ \frac{1}{5} \vspace{2pt} \\ \frac{1}{5} \vspace{2pt} \\ \frac{1}{5} \vspace{2pt} \\ \frac{1}{5}}
+\end{align}
+\begin{align}
+	&= \myvec{\frac{1}{25} \vspace{2pt}\\ \frac{2}{25} \vspace{2pt} \\ \frac{3}{25} \vspace{2pt} \\ \frac{4}{25} \vspace{2pt} \\ \frac{1}{5} \vspace{2pt}\\	  \frac{4}{25} \vspace{2pt} \\ \frac{3}{25} \vspace{2pt} \\ \frac{2}{25} \vspace{2pt} \\ \frac{1}{25}}
+\end{align}
+
 \begin{enumerate}[label=(\roman*)]
 	\item the same day
 	\begin{align}
-	P\brak{X = Y} &= \frac{5}{25}\\
-	&= \frac{1}{5}
+	\implies X &= Y\\
+	Z &= 0\\
+	p_z\brak{0} &= \frac{1}{5}
 	\end{align}
 	\item consecutive days
 	\begin{align}
-	P\brak{\abs{X-Y} = 1} &= \frac{10}{25}\\
-	&= \frac{2}{5}
+	\implies \abs{X - Y} &= 1\\
+	Z &= \cbrak{-1,1}\\
+	p_z\brak{1} + p_z\brak{-1} &= \frac{8}{25}
 	\end{align}
 	\item different days
 	\begin{align}
-	P\brak{X \neq Y} &= 1 - P\brak{X = Y}\\
+	\implies X &\neq Y\\
+	Z &\neq 0 \\
+	p_z\brak{k \neq 0} &= 1 - p_z\brak{0}\\
 	&= 1 - \frac{1}{5}\\
 	&= \frac{4}{5}
 	\end{align} 

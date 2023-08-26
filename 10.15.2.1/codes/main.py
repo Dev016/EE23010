@@ -1,5 +1,5 @@
 import numpy as np
-simlen = 1000
+simlen = 100000
 x = np.random.choice(np.arange(0,5),size=simlen)
 y = np.random.choice(np.arange(0,5),size=simlen)
 z = x-y
