@@ -213,7 +213,7 @@ Two customers Shyam and Ekta are visiting a particular shop in the same week(Tue
 \solution
 Let $X$ and $Y$ be the random variables that denote the day on which Shyam and Ekta visit the shop respectively.
 \begin{align}
-X,Y = 
+X,Y &= 
 	\begin{cases}
 		0, & \text{Tuesday}\\
 		1, & \text{Wednesday}\\
@@ -222,9 +222,9 @@ X,Y =
 		4, & \text{Saturday}
 	\end{cases}
 \end{align}
-The pmf of $X$ is:
+The pmf of $X$	 is:
 \begin{align}
-	p_x\brak{k} =
+	p_X\brak{k} &=
 	\begin{cases}
 		0, & k < 0\\
 		\frac{1}{5}, & 0 \leq k \leq 4\\
@@ -234,11 +234,11 @@ The pmf of $X$ is:
 Let $Z$ be a random variable such that,
 \begin{align}
 	Z &= X - Y\\
-	p_z\brak{k} &= P\brak{k = Z} \\
+	p_Z\brak{k} &= P\brak{k = Z} \\
 	&= P\brak{X-Y = k}\\
 	&= P\brak{X = k + Y}\\
-	&= E\sbrak{p_x\brak{k + Y}}\\
-	&= \sum_{m = 0}^{4} p_x\brak{k + m} p_y\brak{m}\\
+	&= E\sbrak{p_X\brak{k + Y}}\\
+	&= \sum_{m = 0}^{4} p_X\brak{k + m} p_Y\brak{m}\\
 	&= \myvec{\frac{1}{5} & 0 & 0 & 0 & 0 \vspace{2pt} \\
 		  \frac{1}{5} & \frac{1}{5} & 0 & 0 & 0 \vspace{2pt}\\
 		  \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & 0 & 0 \vspace{2pt}\\
@@ -253,32 +253,67 @@ Let $Z$ be a random variable such that,
 \begin{align}
 	&= \myvec{\frac{1}{25} \vspace{2pt}\\ \frac{2}{25} \vspace{2pt} \\ \frac{3}{25} \vspace{2pt} \\ \frac{4}{25} \vspace{2pt} \\ \frac{1}{5} \vspace{2pt}\\	  \frac{4}{25} \vspace{2pt} \\ \frac{3}{25} \vspace{2pt} \\ \frac{2}{25} \vspace{2pt} \\ \frac{1}{25}}
 \end{align}
-\begin{table}[!ht]                             
-\input{./tables/table1.tex}  
-\caption{Random Variables}
-\end{table}
+The pmf of $Z$	 is:
+\begin{align}
+	p_Z\brak{k} &=
+	\begin{cases}
+		\frac{1}{25}, & k \in \cbrak{-4,4}\\
+		\frac{2}{25}, & k \in \cbrak{-3,3}\\
+		\frac{3}{25}, & k \in \cbrak{-2,2}\\
+		\frac{4}{25}, & k \in \cbrak{-1,1}\\
+		\frac{1}{5}, & k = 0
+	\end{cases}
+\end{align}
+The pmf of $\abs{Z}$ is:
+\begin{align}
+	p_{\abs{Z}}\brak{k} &= 
+	\begin{cases}
+		2p_Z\brak{k}, & k \neq 0\\
+		p_Z\brak{k}, & k = 0
+	\end{cases}\\
+	&= 
+	\begin{cases}
+		\frac{1}{5}, & k = 0\\
+		\frac{8}{25}, & k = 1\\
+		\frac{6}{25}, & k = 2\\
+		\frac{4}{25}, & k = 3\\
+		\frac{2}{25}, & k = 4
+	\end{cases}
+\end{align}
 \begin{enumerate}[label=(\roman*)]
 	\item the same day
 	\begin{align}
 	\implies X &= Y\\
-	Z &= 0\\
-	p_z\brak{0} &= \frac{1}{5}
+	\abs{Z} &= 0\\
+	p_{\abs{Z}}\brak{0} &= \frac{1}{5}
 	\end{align}
 	\item consecutive days
 	\begin{align}
 	\implies \abs{X - Y} &= 1\\
-	Z &= \cbrak{-1,1}\\
-	p_z\brak{1} + p_z\brak{-1} &= \frac{8}{25}
+	\abs{Z} &= 1\\
+	p_{\abs{Z}}\brak{1} &= \frac{8}{25}
 	\end{align}
 	\item different days
 	\begin{align}
 	\implies X &\neq Y\\
-	Z &\neq 0 \\
-	p_z\brak{k \neq 0} &= 1 - p_z\brak{0}\\
+	\abs{X - Y} &\neq 0\\
+	\abs{Z} &\neq 0 \\
+	p_{\abs{Z}}\brak{k \neq 0} &= 1 - p_{\abs{Z}}\brak{0}\\
 	&= 1 - \frac{1}{5}\\
 	&= \frac{4}{5}
 	\end{align}
 \end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{./figs/figure1.png}
+\caption{Distribution of $\abs{Z}$}
+\end{figure}
+
+\begin{table}[!ht]                             
+\input{./tables/table1.tex}  
+\caption{Random Variables}
+\end{table}
 
 %\begin{table}[!ht]
 %	\input{inp_alone.tex}	
