@@ -1,33 +1,82 @@
 import numpy as np
 import matplotlib.pyplot as plt
-simlen = 100000
+
+# Sample size for simulation
+simlen = 10000
+#Generating the samples for random variables x and y
 x = np.random.choice(np.arange(0,5),size=simlen)
 y = np.random.choice(np.arange(0,5),size=simlen)
-z = x-y
-p1 = np.count_nonzero(z==0)
+
+#Calculating the pmf of Z
+z, pmf_z = np.unique(x - y, return_counts = True)
+z1, pmf_z1 = np.unique(abs(x-y), return_counts = True)
+
+pmf_z = pmf_z/simlen
+pmf_z1 = pmf_z1/simlen
+
+#Cumulative probability of |Z| from simulation
+cdf_z1 = np.cumsum(pmf_z1)
+
+
 print("Probability through Simulation")
-print("Same Day:", p1/simlen)
-p2 = np.count_nonzero((z==1) | (z == -1))
-print("Consecutive Days:" , p2/simlen)
-print("Different Days:", (simlen - p1)/simlen)
+print("Same Day:", pmf_z1[0])
+print("Consecutive Days:" , pmf_z1[1])
+print("Different Days:", (1 - pmf_z1[0]))
+print('')
 
+#Calculating propability theoretically
 print("Theoretical Probability")
-p0 = np.array([0.2,0.2,0.2,0.2,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2]))
-print("Same Day:" , p0)
-p1 = np.array([0.2,0.2,0.2,0.2,0])@(np.array([0.2,0.2,0.2,0.2,0.2])) + np.array([0,0.2,0.2,0.2,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2]))
-p2 = np.array([0.2,0.2,0.2,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])) + np.array([0,0,0.2,0.2,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2]))
-p3 = np.array([0.2,0.2,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])) + np.array([0,0,0,0.2,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2]))
-p4 = np.array([0.2,0,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])) + np.array([0,0,0,0,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2]))
-print("Consecutive Days:" , p1)
-print("Different Days:", 1- p1)
+theoretical = {-4: np.array([0.2,0,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       -3: np.array([0.2,0.2,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       -2: np.array([0.2,0.2,0.2,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       -1: np.array([0.2,0.2,0.2,0.2,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       0: np.array([0.2,0.2,0.2,0.2,0.2])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       1: np.array([0.2,0.2,0.2,0.2,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       2: np.array([0.2,0.2,0.2,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       3: np.array([0.2,0.2,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2])),
+	       4: np.array([0.2,0,0,0,0])@(np.array([0.2,0.2,0.2,0.2,0.2]))}
 
-#plt.bar(x = [0,1,2,3,4],height = [p0,p1,p2,p3,p4])
-#plt.show()
+#Cumulative probability
+cdf_th = {0 : theoretical[0]}
+cdf_th[1] = cdf_th[0] + theoretical[-1] + theoretical[1]
+cdf_th[2] = cdf_th[1] + theoretical[-2] + theoretical[2]
+cdf_th[3] = cdf_th[2] + theoretical[-3] + theoretical[3]
+cdf_th[4] = cdf_th[3] + theoretical[-4] + theoretical[4]
 
-plt.stem([0,1,2,3,4], [p0,p1,p2,p3,p4], markerfmt='o', linefmt='C1-', use_line_collection=True)
-plt.xlabel('$|Z|$')
-plt.ylabel('$Probability$')
-plt.title("Probability Distribution")
-plt.grid()
+#PMF of |Z|
+pmf_z2 = [cdf_th[0], cdf_th[1]-cdf_th[0],cdf_th[2]-cdf_th[1],cdf_th[3]-cdf_th[2],cdf_th[4]-cdf_th[3]]
+
+print("Same Day:" , pmf_z2[0])
+print("Consecutive Days:" , pmf_z2[1])
+print("Different Days:", 1- pmf_z2[0])
+
+
+#Plotting graphs
+plt.stem(z, theoretical.values(), linefmt='b-', markerfmt='bo')
+plt.stem(z, pmf_z, linefmt='none', markerfmt='go')
+plt.xlabel('$Z$')
+plt.ylabel('PMF')
+plt.title("PMF of Z")
+plt.legend(['Theoretical', 'Simulated'])
 plt.savefig('/home/devansh/EE23010/10.15.2.1/figs/figure1.png')
+plt.clf()
+
+plt.stem(z1, pmf_z2, linefmt='b-', markerfmt='bo')
+plt.stem(z1, pmf_z1, linefmt='none', markerfmt='go')
+plt.xlabel('$|Z|$')
+plt.ylabel('PMF')
+plt.title("PMF of |Z|")
+plt.legend(['Theoretical', 'Simulated'])
+plt.savefig('/home/devansh/EE23010/10.15.2.1/figs/figure2.png')
+plt.clf()
+
+plt.stem(z1, cdf_th.values(), linefmt='b-', markerfmt='bo')
+plt.stem(z1, cdf_z1, linefmt='none', markerfmt='go')
+plt.xlabel('$Z$')
+plt.ylabel('CDF')
+plt.title("CDF of |Z|")
+plt.legend(['Theoretical', 'Simulated'])
+plt.savefig('/home/devansh/EE23010/10.15.2.1/figs/figure3.png')
+plt.clf()
+
 

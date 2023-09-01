@@ -264,24 +264,36 @@ The pmf of $Z$	 is:
 		\frac{1}{5}, & k = 0
 	\end{cases}
 \end{align}
-Now, since $X$ and $Y$ are interchangeable,
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/figure1.png}
+\caption{Distribution of $\abs{Z}$}
+\end{figure}
+\\
+The cumulative distributive function for $\abs{Z}$ is:
 \begin{align}
-\implies p_Z\brak{k} &= p_Z\brak{-k}
+	F_{\abs{Z}}(k) &= \pr{\abs{Z} \leq k}\\
+	&= \sum_{i = -k}^{k} p_Z\brak{i}\\
+	&= \begin{cases}
+		0, & k < 0\\
+		\frac{1}{5}, & k = 0\\
+		\frac{13}{25}, & k = 1\\
+		\frac{19}{25}, & k = 2\\
+		\frac{23}{25}, & k = 3\\
+		1, & k = 4
+	\end{cases} 
 \end{align}
-When $k \neq 0$,
-\begin{align}
-	p_{\abs{Z}}\brak{k} &= p_Z\brak{k} + p_Z\brak{-k}\\
-	&= 2p_Z\brak{k}
-\end{align}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/figure2.png}
+\caption{Distribution of $\abs{Z}$}
+\end{figure}
+\\
+
 The pmf of $\abs{Z}$ is:
 \begin{align}
-	p_{\abs{Z}}\brak{k} &= 
-	\begin{cases}
-		2p_Z\brak{k}, & k \neq 0\\
-		p_Z\brak{k}, & k = 0
-	\end{cases}\\
-	&= 
-	\begin{cases}
+	p_{\abs{Z}}\brak{k} &= F_{\abs{Z}}\brak{k} - F_{\abs{Z}}\brak{k-1}\\
+	&= \begin{cases}
 		\frac{1}{5}, & k = 0\\
 		\frac{8}{25}, & k = 1\\
 		\frac{6}{25}, & k = 2\\
@@ -289,6 +301,12 @@ The pmf of $\abs{Z}$ is:
 		\frac{2}{25}, & k = 4
 	\end{cases}
 \end{align}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/figure3.png}
+\caption{Distribution of $\abs{Z}$}
+\end{figure}
+\\
 \begin{enumerate}[label=(\roman*)]
 	\item the same day
 	\begin{align}
@@ -312,29 +330,12 @@ The pmf of $\abs{Z}$ is:
 	&= \frac{4}{5}
 	\end{align}
 \end{enumerate}
-\begin{figure}
-\centering
-\includegraphics[width=\columnwidth]{./figs/figure1.png}
-\caption{Distribution of $\abs{Z}$}
-\end{figure}
 
 \begin{table}[!ht]                             
 \input{./tables/table1.tex}  
 \caption{Random Variables}
 \end{table}
 
-%\begin{table}[!ht]
-%	\input{inp_alone.tex}	
-%\end{table}
-
-
-
-%\renewcommand{\theequation}{\theenumi}
-%\subsection{Problem}
-
-%\section{Chemistry}
-%\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
-%\numberwithin{equation}{enumi}
 
 \end{document}
 
