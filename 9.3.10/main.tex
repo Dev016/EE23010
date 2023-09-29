@@ -207,55 +207,35 @@
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
-Question:
+Question
 A bag consists of 10 balls each marked with one of the digits 0 to 9. If 4 balls are drawn successively with replacement from the bag, what is the probability that none is marked with the digit 0?
 \solution
-Let X be a random variable defined as
 \begin{table}[!ht]
 	\input{./tables/table.tex}
 \end{table}\\
-$X$ has a binomial distribution with parameters
 \begin{align}
-	n &= 4\\
-	p &= 0.9
+	Y \sim \gauss{\mu}{\sigma^2}
 \end{align}
-The variance and mean is
+The gaussian distribution function is defined as:
 \begin{align}
-	\mu &= np\\
-	&= 3.6\\
-	\sigma^2 &= np\brak{1-p}\\
-	&= 0.36	
+	p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}}
 \end{align}
-The pmf of X is given by
+The probability that none of the balls drawn is marked with zero is given by:
 \begin{align}
-	p_X\brak{k} &= \comb{n}{k}\brak{p}^k\brak{1-p}^{n-k}\\
-	&= \comb{4}{k}\brak{0.9}^k\brak{0.1}^{4-k}
+	p_Y\brak{0} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{-\mu}^2}{2{\sigma}^2}}\\
+	&= 0.532
 \end{align}
-Now, the probability that none of the balls drawn is marked with zero
+\textbf{Using Binomial:}
+Let X be a random variable which denotes the number of balls drawn that are marked with zero,
 \begin{align}
-	p_X\brak{4} &= \comb{4}{4}\brak{0.9}^4\brak{0.1}^0\\
+	p_X\brak{k} &= \comb{n}{k} p^{k}\brak{1-p}^{n-k}\\
+	p_X\brak{0} &= \comb{4}{0}\brak{0.1}^0\brak{0.9}^4\\
 	&= 0.6561
-\end{align}
-Let Y be a gaussian variable,
-\begin{align}
-	Y &= \frac{X - \mu}{\sigma}
-\end{align}
-The pdf is given by
-\begin{align}
-	f_Y(x)&=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
-\end{align}
-When $X = 4$
-\begin{align}
-	Y &= \frac{4 - 3.6}{0.6}\\
-	&= \frac{2}{3}
-\end{align}
-\begin{align}
-	p_Y\brak{\frac{2}{3}} &= 0.532 	
 \end{align}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/figure.png}
-\caption{Binomial pmf vs Gaussian pdf }
+\caption{Binomial PMF vs Gaussian PDF }
 \end{figure}
 \end{document}
 
