@@ -210,6 +210,8 @@
 Question
 A bag consists of 10 balls each marked with one of the digits 0 to 9. If 4 balls are drawn successively with replacement from the bag, what is the probability that none is marked with the digit 0?
 \solution
+\begin{enumerate}[label=(\alph*)]
+\item Gaussian PDF
 \begin{table}[!ht]
 	\input{./tables/table.tex}
 \end{table}\\
@@ -225,13 +227,50 @@ The probability that none of the balls drawn is marked with zero is given by:
 	p_Y\brak{0} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{-\mu}^2}{2{\sigma}^2}}\\
 	&= 0.532
 \end{align}
-\textbf{Using Binomial:}
+\item CDF Approximation
+\begin{align}
+	\pr{Y \leq 0} &= F_Y\brak{0}
+\end{align}
+CDF of $Y$ is:
+\begin{align}
+	F_Y\brak{x} &= \pr{Y \leq x}\\
+	&= \pr{Y - \mu \leq x - \mu}\\
+	&= \pr{\frac{Y - \mu}{\sigma} \leq \frac{x - \mu}{\sigma}}
+\end{align}
+Since,
+\begin{align}
+	\frac{Y - \mu}{\sigma} \sim \gauss{0}{1}
+\end{align}
+Q function is defined
+\begin{align}
+	\qfunc{x} &= \pr{Y > x} \forall x \in Y \sim \mathcal{N}(0,1)\\
+	F_Y(x) &= 1-\pr{\frac{Y-\mu}{\sigma} > \frac{x-\mu}{\sigma}}\\
+	&= 
+    \begin{cases}
+        1 - \qfunc{\frac{x-\mu}{\sigma}}, &  x > \mu \\
+        \qfunc{\frac{\mu-x}{\sigma}}, &  x < \mu
+    \end{cases}
+\end{align}
+\begin{align}
+	F_Y\brak{0} &= \qfunc{\frac{0.4 - 0}{0.6}}\\
+	&= \qfunc{\frac{2}{3}}\\
+	&= 0.252
+\end{align}
+
+
+\item Binomial PMF
 Let X be a random variable which denotes the number of balls drawn that are marked with zero,
 \begin{align}
 	p_X\brak{k} &= \comb{n}{k} p^{k}\brak{1-p}^{n-k}\\
 	p_X\brak{0} &= \comb{4}{0}\brak{0.1}^0\brak{0.9}^4\\
 	&= 0.6561
 \end{align}
+\end{enumerate}
+
+\begin{table}[!ht]
+	\input{./tables/table1.tex}
+\end{table}
+
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/figure.png}
