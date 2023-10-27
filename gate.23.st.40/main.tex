@@ -324,5 +324,17 @@ Minimizing the mean square error,
 	6c &= 5\\
 	c &= \frac{5}{6}
 \end{align}
+To verify that $cT$ is a good estimate for $\theta$, let
+\begin{align}
+	\theta &= 0.5\\
+	E\brak{\brak{cT - \theta^2}^2} &= \frac{1}{5}\brak{\frac{25}{36}}\brak{0.5}^4 + \brak{\frac{-1}{6}}^2\brak{0.5}^4\\
+	&= \frac{1}{96}\\
+	&= 0.0104
+\end{align}
+The mean square error is small relative to the value of $\theta$, hence $cT$ is a good estimate.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width = \columnwidth]{./figs/fig1.png}
+\end{figure}
 \end{document}
 
